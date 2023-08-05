@@ -1,13 +1,149 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  /* Primary */
+  --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); /*active input border */
+  --Red: hsl(0, 100%, 66%); /*input errors*/
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --ff-: "Space Grotesk", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  height: 100vh;
+  background-image: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cards-container {
+}
+
+.front {
+  background-image: url(./images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  width: 300px;
+  color: var(--White);
+  margin-right: 70px;
+  margin-bottom: 30px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  width: 50px;
+  margin-bottom: 40px;
+}
+
+.numbers {
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 20px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.back {
+  background-image: url(./images/bg-card-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  width: 300px;
+  height: 170px;
+  position: relative;
+  margin-left: 70px;
+}
+
+.cvc {
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  color: var(--White);
+  font-size: 0.7rem;
+}
+
+/* FORM SECTION */
+
+/* div {
+  border: 1px solid red;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  font-size: 10px;
+  font-weight: bold;
+  max-width: 300px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-block: 10px;
+}
+
+input {
+  outline: none;
+  width: 100%;
+  height: 30px;
+  border: 1px solid var(--Light-grayish-violet);
+  border-radius: 5px;
+  margin-block: 5px;
+  padding: 5px 10px;
+}
+
+input:focus {
+  border-color: var(--Linear-gradient);
+}
+
+.form-flex {
+  display: flex;
+}
+
+.input-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-date {
+  width: 60px;
+}
+
+.submit {
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
 }
