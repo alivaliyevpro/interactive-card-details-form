@@ -31,14 +31,11 @@
   background-size: contain;
 }
 
-.cards-container {
-}
-
 .front {
   background-image: url(./images/bg-card-front.png);
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 300px;
   color: var(--White);
   margin-right: 70px;
@@ -73,7 +70,7 @@
   background-image: url(./images/bg-card-back.png);
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 300px;
   height: 170px;
   position: relative;
@@ -90,18 +87,13 @@
 
 /* FORM SECTION */
 
-/* div {
-  border: 1px solid red;
-} */
-
-.form {
+.form-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px;
-  font-size: 10px;
   font-weight: bold;
-  max-width: 300px;
+  font-size: 12px;
 }
 
 .wrapper {
@@ -114,9 +106,9 @@
 input {
   outline: none;
   width: 100%;
-  height: 30px;
+  height: 40px;
   border: 1px solid var(--Light-grayish-violet);
-  border-radius: 5px;
+  border-radius: 10px;
   margin-block: 5px;
   padding: 5px 10px;
 }
@@ -139,11 +131,106 @@ input:focus {
   width: 60px;
 }
 
-.submit {
+.submit,
+.continue {
   background-color: var(--Very-dark-violet);
   color: var(--White);
-  padding: 10px;
+  padding: 15px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
+  font-size: 18px;
+}
+
+/* ALERTS */
+
+.alert {
+  color: var(--Red);
+}
+
+#name,
+#number,
+#month,
+#year,
+#cvc {
+  border: 1px solid var(--Red);
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+    background-image: url(images/bg-main-mobile.png);
+  }
+  .cards-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .front {
+    margin-inline-end: 50px;
+    margin-top: -70px;
+    z-index: 100;
+  }
+
+  .back {
+    margin-left: auto;
+  }
+
+  input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 80px;
+    gap: 30px;
+    height: 80%;
+    background-image: url(images/bg-main-mobile.png);
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .front {
+    margin-inline-end: 50px;
+    margin-top: -70px;
+    z-index: 100;
+  }
+
+  .back {
+    margin-left: auto;
+  }
+
+  input {
+    font-size: 16px;
+  }
+}
+
+.icon {
+  width: 50px;
+}
+
+.form-hide {
+  display: none;
+}
+
+.confirm-visible {
+  display: block;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.confirm-hide {
+  display: none;
 }
